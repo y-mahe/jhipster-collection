@@ -1,0 +1,21 @@
+/**
+ * The Employee entity.
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+    language Language,
+	commissionPct Long
+}
+
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
