@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employee">
+            <h2><span jhiTranslate="jhipsterCollectionsApp.employee.detail.title">Employee</span> {{ employee.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterCollectionsApp.employee.firstName" [ngbTooltip]="'jhipsterCollectionsApp.employee.help.firstName' | translate">First Name</span></dt>
+                <dd>
+                    <span>{{ employee.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterCollectionsApp.employee.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ employee.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterCollectionsApp.employee.email">Email</span></dt>
+                <dd>
+                    <span>{{ employee.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterCollectionsApp.employee.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{ employee.phoneNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterCollectionsApp.employee.hireDate">Hire Date</span></dt>
+                <dd>
+                    <span>{{ employee.hireDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterCollectionsApp.employee.salary">Salary</span></dt>
+                <dd>
+                    <span>{{ employee.salary }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterCollectionsApp.employee.language">Language</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterCollectionsApp.Language.' + employee.language }}">{{ employee.language }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterCollectionsApp.employee.commissionPct">Commission Pct</span></dt>
+                <dd>
+                    <span>{{ employee.commissionPct }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employee', employee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
